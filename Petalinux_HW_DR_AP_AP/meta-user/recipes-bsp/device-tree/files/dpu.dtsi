@@ -1,0 +1,24 @@
+/ {
+        amba{
+		dpu{
+		    #address-cells = <1>;
+    		    #size-cells = <1>;
+    		    compatible = "xilinx,dpu";
+    		    base-addr = <0x40000000>;
+
+		    dpucore {
+		        compatible = "xilinx,dpucore";
+		        interrupt-parent = <&intc>;
+		        interrupts = <0x0 29 0x4>;
+		        core-num = <0x1>;
+		    };
+
+		};
+	};
+
+
+	amba_pl@0 {
+                /delete-node/ dpu_eu@40000000;
+	};
+};
+
