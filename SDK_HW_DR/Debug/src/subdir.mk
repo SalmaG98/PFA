@@ -17,7 +17,7 @@ OBJS += \
 src/%.o: ../src/%.cc
 	@echo 'Building file: $<'
 	@echo 'Invoking: ARM v7 Linux g++ compiler'
-	arm-linux-gnueabihf-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"$@" -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	arm-linux-gnueabihf-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"$@" --sysroot=/home/salmag98/Vivado_Projects/Petalinux_HW_DR_AP_AP/Petalinux_HW_DR/images/linux/sdk/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

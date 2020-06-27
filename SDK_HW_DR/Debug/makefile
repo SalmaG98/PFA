@@ -47,7 +47,7 @@ all: SDK_HW_DR_proj.elf secondary-outputs
 SDK_HW_DR_proj.elf: $(OBJS)  $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 Linux g++ linker'
-	arm-linux-gnueabihf-g++  -o "SDK_HW_DR_proj.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-linux-gnueabihf-g++ --sysroot=/home/salmag98/Vivado_Projects/Petalinux_HW_DR_AP_AP/Petalinux_HW_DR/images/linux/sdk/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi -o "SDK_HW_DR_proj.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

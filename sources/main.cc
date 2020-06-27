@@ -74,7 +74,7 @@ using namespace cv;
 /* 7.71 GOP MAdds for ResNet50 */
 //#define RESNET50_WORKLOAD (7.71f)
 /* DPU Kernel name for ResNet50 */
-#define KRENEL_GHAILEN "ghailen_0"
+#define KERNEL_PFA "PFA_Model_optimized_0"
 /* Input Node for Kernel ResNet50 */
 #define INPUT_NODE      "conv1_Conv2D"
 /* Output Node for Kernel ResNet50 */
@@ -222,8 +222,8 @@ void TopK(const float *d, int size, int k, vector<string> &vkinds) {
  *
  * @return none
  */
-void runGhailen(DPUTask *taskghailen) {
-    assert(taskghailen);
+void runPFA(DPUTask *taskpfa) {
+    assert(taskpfa);
 
     /* Mean value for Flower Classification specified in Caffe prototxt */
     vector<string> kinds, images;
@@ -243,12 +243,12 @@ void runGhailen(DPUTask *taskghailen) {
     }
 
     /* Get channel count of the output Tensor for Flower Classification Task  */
-    int channel = dpuGetOutputTensorChannel(taskghailen, OUTPUT_NODE);
+    int channel = dpuGetOutputTensorChannel(taskpfa, OUTPUT_NODE);
     float *softmax = new float[channel];
     float *FCResult = new float[channel];
-	float scale_input = dpuGetInputTensorScale(taskghailen, INPUT_NODE);
+	float scale_input = dpuGetInputTensorScale(taskpfa, INPUT_NODE);
 	printf("scale_input = %f;\n\r", scale_input);	
-	DPUTensor *dpu_in = dpuGetInputTensor(taskghailen, INPUT_NODE);
+	DPUTensor *dpu_in = dpuGetInputTensor(taskpfa, INPUT_NODE);
 	int8_t *data = dpuGetTensorAddress(dpu_in);
 
     for (auto &imageName : images) {
@@ -262,7 +262,7 @@ void runGhailen(DPUTask *taskghailen) {
 
         /* Launch RetNet50 Task */
         cout << "\nRun DPU Task for Cifar10 ..." << endl;
-        dpuRunTask(taskghailen);
+        dpuRunTask(taskpfa);
 
         /* Get DPU execution time (in us) of DPU Task */
         //long long timeProf = dpuGetTaskProfile(taskFlowerClassification);
@@ -271,15 +271,15 @@ void runGhailen(DPUTask *taskghailen) {
         //cout << "  DPU Task Performance: " << prof << "GOPS\n";
 
         /* Get FC result and convert from INT8 to FP32 format */
-        dpuGetOutputTensorInHWCFP32(taskghailen, OUTPUT_NODE, FCResult, channel);
+        dpuGetOutputTensorInHWCFP32(taskpfa, OUTPUT_NODE, FCResult, channel);
 
         /* Calculate softmax on CPU and display TOP-5 classification results */
         CPUCalcSoftmax(FCResult, channel, softmax);
-        TopK(softmax, channel, 10, kinds);
+        TopK(softmax, channel, 5, kinds);
 		//break;
 
         /* Display the impage */
-        cv::imshow("Ghailen classification", image);
+        cv::imshow("PFA classification", image);
         cv::waitKey(1000);
     }
 
@@ -296,26 +296,26 @@ void runGhailen(DPUTask *taskghailen) {
  */
 int main(void) {
     /* DPU Kernel/Task for running Flower Classification */
-    DPUKernel *kernelghailen;
-    DPUTask *taskghailen;
+    DPUKernel *kernelpfa;
+    DPUTask *taskpfa;
 
     /* Attach to DPU driver and prepare for running */
     dpuOpen();
 
     /* Load DPU Kernel for Flower Classification */
-    kernelghailen = dpuLoadKernel(KRENEL_GHAILEN);
+    kernelpfa = dpuLoadKernel(KERNEL_PFA);
 
     /* Create DPU Task for Flower Classification */
-    taskghailen = dpuCreateTask(kernelghailen, 0);
+    taskpfa = dpuCreateTask(kernelpfa, 0);
 
     /* Run Flower Classification Task */
-    runGhailen(taskghailen);
+    runPFA(taskpfa);
 
     /* Destroy DPU Task & free resources */
-    dpuDestroyTask(taskghailen);
+    dpuDestroyTask(taskpfa);
 
     /* Destroy DPU Kernel & free resources */
-    dpuDestroyKernel(kernelghailen);
+    dpuDestroyKernel(kernelpfa);
 
     /* Dettach from DPU driver & free resources */
     dpuClose();

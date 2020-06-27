@@ -4,7 +4,7 @@ net="Safwen"
 CPU_ARCH="arm32"
 DNNC_MODE="debug"
 dnndk_board="ZedBoard"
-dnndk_dcf="ZedBoard.dcf"
+dnndk_dcf="dpu-06229-229-202006229-9-45.dcf"
 
 echo "Compiling Network ${net}"
 
