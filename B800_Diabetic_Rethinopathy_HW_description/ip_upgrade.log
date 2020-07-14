@@ -1,0 +1,377 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Fri Jul 10 10:17:00 2020
+| Host         : salmag98-Lenovo-G50-70 running 64-bit Ubuntu 18.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_dpu_eu_0_4'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the conversion of design_1_dpu_eu_0_4 (xilinx.com:ip:dpu_eu:3.0) to Vivado generation flows.
+
+After upgrade, an IP may have parameter differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality.
+
+2. Customization warnings
+-------------------------
+
+An attempt to modify the value of disabled parameter 'SUM_URAM_N' from '0' to '0.0' has been ignored for IP 'design_1_dpu_eu_0_4'
+
+An attempt to modify the value of disabled parameter 'DNNDK_PRINT' from 'Number of DPU Cores:1;Arch of DPU:B1152;RAM Usage:Low;Channel Augmentation:Enabled;DepthWiseConv:Enabled;AveragePool:Enabled;ReLU Type:ReLU + LeakyReLU + ReLU6;Number of SFM cores:0;S-AXI Clock Mode:Independent;dpu_2x Clock Gating:Disabled;DSP48 Maximal Cascade Length:1;DSP48 Usage:High;Ultra-RAM Use per DPU:0;Enable timestamp auto-update:Enabled;Target Version:1.4.0;AXI Protocol:AXI3;S-AXI Data Width:32;M-AXI GP Data Width:32;M-AXI HP Data Width (DPU):64;M-AXI HP Data Width (SFM):128;M-AXI ID Width:2;DSP Slice Count:212;Ultra-RAM Count:0;Block-RAM Count:123.0' to 'Number of DPU Cores:1;Arch of DPU:B1152;RAM Usage:Low;Channel Augmentation:Enabled;DepthWiseConv:Enabled;AveragePool:Enabled;ReLU Type:ReLU + LeakyReLU + ReLU6;Number of SFM cores:0;S-AXI Clock Mode:Independent;dpu_2x Clock Gating:Disabled;DSP48 Maximal Cascade Length:1;DSP48 Usage:High;Ultra-RAM Use per DPU:0;Enable timestamp auto-update:Enabled;Target Version:1.4.0;AXI Protocol:AXI3;S-AXI Data Width:32;M-AXI GP Data Width:32;M-AXI HP Data Width (DPU):64;M-AXI HP Data Width (SFM):128;M-AXI ID Width:2;DSP Slice Count:212;Ultra-RAM Count:0.0;Block-RAM Count:123.0' has been ignored for IP 'design_1_dpu_eu_0_4'
+
+
+3. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:dpu_eu:3.0 -user_name design_1_dpu_eu_0_4
+set_property -dict "\
+  CONFIG.ARCH {1152} \
+  CONFIG.ARCH_DATA_BW {1} \
+  CONFIG.ARCH_HP_BW {2} \
+  CONFIG.ARCH_ICP {12} \
+  CONFIG.ARCH_IMG_BKGRP {2} \
+  CONFIG.ARCH_OCP {12} \
+  CONFIG.ARCH_PP {4} \
+  CONFIG.AXI_PROTOCOL {0} \
+  CONFIG.BANK_BIAS {1} \
+  CONFIG.BANK_IMG_N {8} \
+  CONFIG.BANK_WGT_N {13} \
+  CONFIG.BBANK_BIAS {1} \
+  CONFIG.BBANK_IMG_N {8} \
+  CONFIG.BBANK_WGT_N {13} \
+  CONFIG.CLK_GATING_ENA {0} \
+  CONFIG.CONV_DSP_ACCU_ENA {1} \
+  CONFIG.CONV_DSP_CASC_MAX {1} \
+  CONFIG.CONV_DSP_NUM {192} \
+  CONFIG.CONV_LEAKYRELU {1} \
+  CONFIG.CONV_RELU6 {1} \
+  CONFIG.CONV_RELU_ADDON {3} \
+  CONFIG.CONV_WR_PARALLEL {1} \
+  CONFIG.Component_Name {design_1_dpu_eu_0_4} \
+  CONFIG.DBANK_BIAS {0} \
+  CONFIG.DBANK_IMG_N {0} \
+  CONFIG.DBANK_WGT_N {0} \
+  CONFIG.DNNDK_PRINT {Number of DPU Cores:1;Arch of DPU:B1152;RAM Usage:Low;Channel Augmentation:Enabled;DepthWiseConv:Enabled;AveragePool:Enabled;ReLU Type:ReLU + LeakyReLU + ReLU6;Number of SFM cores:0;S-AXI Clock Mode:Independent;dpu_2x Clock Gating:Disabled;DSP48 Maximal Cascade Length:1;DSP48 Usage:High;Ultra-RAM Use per DPU:0;Enable timestamp auto-update:Enabled;Target Version:1.4.0;AXI Protocol:AXI3;S-AXI Data Width:32;M-AXI GP Data Width:32;M-AXI HP Data Width (DPU):64;M-AXI HP Data Width (SFM):128;M-AXI ID Width:2;DSP Slice Count:212;Ultra-RAM Count:0.0;Block-RAM Count:123.0} \
+  CONFIG.DPU0_M_AXI_DATA0.ADDR_WIDTH {40} \
+  CONFIG.DPU0_M_AXI_DATA0.ARUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA0.AWUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA0.BUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA0.CLK_DOMAIN {/hier_dpu_clk/dpu_clk_wiz_clk_out1} \
+  CONFIG.DPU0_M_AXI_DATA0.DATA_WIDTH {64} \
+  CONFIG.DPU0_M_AXI_DATA0.FREQ_HZ {90000000} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_BRESP {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_BURST {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_CACHE {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_LOCK {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_PROT {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_QOS {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_REGION {0} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_RRESP {1} \
+  CONFIG.DPU0_M_AXI_DATA0.HAS_WSTRB {1} \
+  CONFIG.DPU0_M_AXI_DATA0.ID_WIDTH {2} \
+  CONFIG.DPU0_M_AXI_DATA0.INSERT_VIP {0} \
+  CONFIG.DPU0_M_AXI_DATA0.MAX_BURST_LENGTH {16} \
+  CONFIG.DPU0_M_AXI_DATA0.NUM_READ_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_DATA0.NUM_READ_THREADS {1} \
+  CONFIG.DPU0_M_AXI_DATA0.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_DATA0.NUM_WRITE_THREADS {1} \
+  CONFIG.DPU0_M_AXI_DATA0.PHASE {0.0} \
+  CONFIG.DPU0_M_AXI_DATA0.PROTOCOL {AXI3} \
+  CONFIG.DPU0_M_AXI_DATA0.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.DPU0_M_AXI_DATA0.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_DATA0.RUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA0.SUPPORTS_NARROW_BURST {1} \
+  CONFIG.DPU0_M_AXI_DATA0.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_DATA0.WUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA1.ADDR_WIDTH {40} \
+  CONFIG.DPU0_M_AXI_DATA1.ARUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA1.AWUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA1.BUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA1.CLK_DOMAIN {/hier_dpu_clk/dpu_clk_wiz_clk_out1} \
+  CONFIG.DPU0_M_AXI_DATA1.DATA_WIDTH {64} \
+  CONFIG.DPU0_M_AXI_DATA1.FREQ_HZ {90000000} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_BRESP {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_BURST {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_CACHE {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_LOCK {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_PROT {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_QOS {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_REGION {0} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_RRESP {1} \
+  CONFIG.DPU0_M_AXI_DATA1.HAS_WSTRB {1} \
+  CONFIG.DPU0_M_AXI_DATA1.ID_WIDTH {2} \
+  CONFIG.DPU0_M_AXI_DATA1.INSERT_VIP {0} \
+  CONFIG.DPU0_M_AXI_DATA1.MAX_BURST_LENGTH {16} \
+  CONFIG.DPU0_M_AXI_DATA1.NUM_READ_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_DATA1.NUM_READ_THREADS {1} \
+  CONFIG.DPU0_M_AXI_DATA1.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_DATA1.NUM_WRITE_THREADS {1} \
+  CONFIG.DPU0_M_AXI_DATA1.PHASE {0.0} \
+  CONFIG.DPU0_M_AXI_DATA1.PROTOCOL {AXI3} \
+  CONFIG.DPU0_M_AXI_DATA1.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.DPU0_M_AXI_DATA1.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_DATA1.RUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_DATA1.SUPPORTS_NARROW_BURST {1} \
+  CONFIG.DPU0_M_AXI_DATA1.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_DATA1.WUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_INSTR.ADDR_WIDTH {40} \
+  CONFIG.DPU0_M_AXI_INSTR.ARUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_INSTR.AWUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_INSTR.BUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_INSTR.CLK_DOMAIN {/hier_dpu_clk/dpu_clk_wiz_clk_out1} \
+  CONFIG.DPU0_M_AXI_INSTR.DATA_WIDTH {32} \
+  CONFIG.DPU0_M_AXI_INSTR.FREQ_HZ {90000000} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_BRESP {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_BURST {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_CACHE {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_LOCK {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_PROT {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_QOS {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_REGION {0} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_RRESP {1} \
+  CONFIG.DPU0_M_AXI_INSTR.HAS_WSTRB {1} \
+  CONFIG.DPU0_M_AXI_INSTR.ID_WIDTH {2} \
+  CONFIG.DPU0_M_AXI_INSTR.INSERT_VIP {0} \
+  CONFIG.DPU0_M_AXI_INSTR.MAX_BURST_LENGTH {16} \
+  CONFIG.DPU0_M_AXI_INSTR.NUM_READ_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_INSTR.NUM_READ_THREADS {1} \
+  CONFIG.DPU0_M_AXI_INSTR.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.DPU0_M_AXI_INSTR.NUM_WRITE_THREADS {1} \
+  CONFIG.DPU0_M_AXI_INSTR.PHASE {0.0} \
+  CONFIG.DPU0_M_AXI_INSTR.PROTOCOL {AXI3} \
+  CONFIG.DPU0_M_AXI_INSTR.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.DPU0_M_AXI_INSTR.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_INSTR.RUSER_WIDTH {0} \
+  CONFIG.DPU0_M_AXI_INSTR.SUPPORTS_NARROW_BURST {1} \
+  CONFIG.DPU0_M_AXI_INSTR.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.DPU0_M_AXI_INSTR.WUSER_WIDTH {0} \
+  CONFIG.DPU1_DBANK_BIAS {0} \
+  CONFIG.DPU1_DBANK_IMG_N {0} \
+  CONFIG.DPU1_DBANK_WGT_N {0} \
+  CONFIG.DPU1_GP_ID_BW {2} \
+  CONFIG.DPU1_HP0_ID_BW {2} \
+  CONFIG.DPU1_HP1_ID_BW {2} \
+  CONFIG.DPU1_HP2_ID_BW {2} \
+  CONFIG.DPU1_HP3_ID_BW {2} \
+  CONFIG.DPU1_UBANK_BIAS {0} \
+  CONFIG.DPU1_UBANK_IMG_N {0} \
+  CONFIG.DPU1_UBANK_WGT_N {0} \
+  CONFIG.DPU2_DBANK_BIAS {0} \
+  CONFIG.DPU2_DBANK_IMG_N {0} \
+  CONFIG.DPU2_DBANK_WGT_N {0} \
+  CONFIG.DPU2_GP_ID_BW {2} \
+  CONFIG.DPU2_HP0_ID_BW {2} \
+  CONFIG.DPU2_HP1_ID_BW {2} \
+  CONFIG.DPU2_HP2_ID_BW {2} \
+  CONFIG.DPU2_HP3_ID_BW {2} \
+  CONFIG.DPU2_UBANK_BIAS {0} \
+  CONFIG.DPU2_UBANK_IMG_N {0} \
+  CONFIG.DPU2_UBANK_WGT_N {0} \
+  CONFIG.DPU3_DBANK_BIAS {0} \
+  CONFIG.DPU3_DBANK_IMG_N {0} \
+  CONFIG.DPU3_DBANK_WGT_N {0} \
+  CONFIG.DPU3_GP_ID_BW {2} \
+  CONFIG.DPU3_HP0_ID_BW {2} \
+  CONFIG.DPU3_HP1_ID_BW {2} \
+  CONFIG.DPU3_HP2_ID_BW {2} \
+  CONFIG.DPU3_HP3_ID_BW {2} \
+  CONFIG.DPU3_UBANK_BIAS {0} \
+  CONFIG.DPU3_UBANK_IMG_N {0} \
+  CONFIG.DPU3_UBANK_WGT_N {0} \
+  CONFIG.DSP48_VER {DSP48E1} \
+  CONFIG.DWCV_ALU_MODE {0} \
+  CONFIG.DWCV_DSP_NUM {18} \
+  CONFIG.DWCV_ENA {1} \
+  CONFIG.DWCV_PARALLEL {2} \
+  CONFIG.DWCV_RELU6 {1} \
+  CONFIG.ELEW_PARALLEL {1} \
+  CONFIG.GIT_COMMIT_ID {0x0d9c13f1} \
+  CONFIG.GIT_COMMIT_TIME {1908072152} \
+  CONFIG.GIT_COMMIT_USER {jiaxijie} \
+  CONFIG.GP_ID_BW {2} \
+  CONFIG.HP0_ID_BW {2} \
+  CONFIG.HP1_ID_BW {2} \
+  CONFIG.HP2_ID_BW {2} \
+  CONFIG.HP3_ID_BW {2} \
+  CONFIG.HP_DATA_BW {64} \
+  CONFIG.LOAD_AUGM {1} \
+  CONFIG.LOAD_DSP_NUM {1} \
+  CONFIG.LOAD_IMG_MEAN {0} \
+  CONFIG.LOAD_PARALLEL {2} \
+  CONFIG.MISC_WR_PARALLEL {1} \
+  CONFIG.M_AXI_AWRLEN_BW {4} \
+  CONFIG.M_AXI_AWRLOCK_BW {2} \
+  CONFIG.M_AXI_AWRUSER_BW {1} \
+  CONFIG.M_AXI_FREQ_MHZ {90} \
+  CONFIG.POOL_AVERAGE {1} \
+  CONFIG.RAM_DEPTH_BIAS {3} \
+  CONFIG.RAM_DEPTH_IMG {3} \
+  CONFIG.RAM_DEPTH_MEAN {1} \
+  CONFIG.RAM_DEPTH_WGT {3} \
+  CONFIG.SAVE_DSP_NUM {1} \
+  CONFIG.SAVE_PARALLEL {2} \
+  CONFIG.SFM_DSP_NUM {14} \
+  CONFIG.SFM_ENA {0} \
+  CONFIG.SFM_HP0_ID_BW {2} \
+  CONFIG.SFM_HP_DATA_BW {128} \
+  CONFIG.SUM_AXI_PROTOCOL {0} \
+  CONFIG.SUM_BRAM_N {123.0} \
+  CONFIG.SUM_DSP_NUM {212} \
+  CONFIG.SUM_GP_DATA_BW {32} \
+  CONFIG.SUM_HP_DATA_BW {64} \
+  CONFIG.SUM_SFM_HP_DATA_BW {128} \
+  CONFIG.SUM_S_AXI_DATA_BW {32} \
+  CONFIG.SUM_URAM_N {0.0} \
+  CONFIG.SUM_VER_TARGET {1.4.0} \
+  CONFIG.SYS_IP_TYPE {1} \
+  CONFIG.SYS_IP_VER {0x30} \
+  CONFIG.SYS_REGMAP_SIZE {12} \
+  CONFIG.SYS_REGMAP_VER {0x01} \
+  CONFIG.S_AXI.ADDR_WIDTH {32} \
+  CONFIG.S_AXI.ARUSER_WIDTH {0} \
+  CONFIG.S_AXI.AWUSER_WIDTH {0} \
+  CONFIG.S_AXI.BUSER_WIDTH {0} \
+  CONFIG.S_AXI.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.S_AXI.DATA_WIDTH {32} \
+  CONFIG.S_AXI.FREQ_HZ {100000000} \
+  CONFIG.S_AXI.HAS_BRESP {1} \
+  CONFIG.S_AXI.HAS_BURST {1} \
+  CONFIG.S_AXI.HAS_CACHE {1} \
+  CONFIG.S_AXI.HAS_LOCK {1} \
+  CONFIG.S_AXI.HAS_PROT {1} \
+  CONFIG.S_AXI.HAS_QOS {1} \
+  CONFIG.S_AXI.HAS_REGION {1} \
+  CONFIG.S_AXI.HAS_RRESP {1} \
+  CONFIG.S_AXI.HAS_WSTRB {1} \
+  CONFIG.S_AXI.ID_WIDTH {12} \
+  CONFIG.S_AXI.INSERT_VIP {0} \
+  CONFIG.S_AXI.MAX_BURST_LENGTH {16} \
+  CONFIG.S_AXI.NUM_READ_OUTSTANDING {8} \
+  CONFIG.S_AXI.NUM_READ_THREADS {4} \
+  CONFIG.S_AXI.NUM_WRITE_OUTSTANDING {8} \
+  CONFIG.S_AXI.NUM_WRITE_THREADS {4} \
+  CONFIG.S_AXI.PHASE {0.000} \
+  CONFIG.S_AXI.PROTOCOL {AXI3} \
+  CONFIG.S_AXI.READ_WRITE_MODE {READ_WRITE} \
+  CONFIG.S_AXI.RUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI.RUSER_WIDTH {0} \
+  CONFIG.S_AXI.SUPPORTS_NARROW_BURST {0} \
+  CONFIG.S_AXI.WUSER_BITS_PER_BYTE {0} \
+  CONFIG.S_AXI.WUSER_WIDTH {0} \
+  CONFIG.S_AXI_AWRLEN_BW {4} \
+  CONFIG.S_AXI_CLK_INDEPENDENT {1} \
+  CONFIG.S_AXI_FREQ_MHZ {100} \
+  CONFIG.S_AXI_ID_BW {12} \
+  CONFIG.S_AXI_SLAVES_BASE_ADDR {0x40000000} \
+  CONFIG.TIMESTAMP_ENA {1} \
+  CONFIG.TIME_DAY {22} \
+  CONFIG.TIME_HOUR {9} \
+  CONFIG.TIME_MONTH {6} \
+  CONFIG.TIME_QUARTER {3} \
+  CONFIG.TIME_YEAR {20} \
+  CONFIG.UBANK_BIAS {0} \
+  CONFIG.UBANK_BIAS_USER {0} \
+  CONFIG.UBANK_IMG_N {0} \
+  CONFIG.UBANK_IMG_N_USER {0} \
+  CONFIG.UBANK_WGT_N {0} \
+  CONFIG.UBANK_WGT_N_USER {0} \
+  CONFIG.URAM_N_USER {0} \
+  CONFIG.VER_CHIP_PART {1} \
+  CONFIG.VER_DPU_NUM {1} \
+  CONFIG.VER_IP_REV {0xff} \
+  CONFIG.VER_TARGET {0x140} \
+  CONFIG.dpu1_2x_clk.ASSOCIATED_BUSIF {} \
+  CONFIG.dpu1_2x_clk.ASSOCIATED_CLKEN {dpu1_2x_clk_ce} \
+  CONFIG.dpu1_2x_clk.ASSOCIATED_RESET {dpu_2x_resetn} \
+  CONFIG.dpu1_2x_clk.CLK_DOMAIN {} \
+  CONFIG.dpu1_2x_clk.FREQ_HZ {325000000} \
+  CONFIG.dpu1_2x_clk.INSERT_VIP {0} \
+  CONFIG.dpu1_2x_clk.PHASE {0.000} \
+  CONFIG.dpu1_2x_clk_ce.FREQ_HZ {100000000} \
+  CONFIG.dpu1_2x_clk_ce.PHASE {0} \
+  CONFIG.dpu1_2x_clk_ce.POLARITY {ACTIVE_HIGH} \
+  CONFIG.dpu2_2x_clk.ASSOCIATED_BUSIF {} \
+  CONFIG.dpu2_2x_clk.ASSOCIATED_CLKEN {dpu2_2x_clk_ce} \
+  CONFIG.dpu2_2x_clk.ASSOCIATED_RESET {dpu_2x_resetn} \
+  CONFIG.dpu2_2x_clk.CLK_DOMAIN {} \
+  CONFIG.dpu2_2x_clk.FREQ_HZ {325000000} \
+  CONFIG.dpu2_2x_clk.INSERT_VIP {0} \
+  CONFIG.dpu2_2x_clk.PHASE {0.000} \
+  CONFIG.dpu2_2x_clk_ce.FREQ_HZ {100000000} \
+  CONFIG.dpu2_2x_clk_ce.PHASE {0} \
+  CONFIG.dpu2_2x_clk_ce.POLARITY {ACTIVE_HIGH} \
+  CONFIG.dpu3_2x_clk.ASSOCIATED_BUSIF {} \
+  CONFIG.dpu3_2x_clk.ASSOCIATED_CLKEN {dpu3_2x_clk_ce} \
+  CONFIG.dpu3_2x_clk.ASSOCIATED_RESET {dpu_2x_resetn} \
+  CONFIG.dpu3_2x_clk.CLK_DOMAIN {} \
+  CONFIG.dpu3_2x_clk.FREQ_HZ {325000000} \
+  CONFIG.dpu3_2x_clk.INSERT_VIP {0} \
+  CONFIG.dpu3_2x_clk.PHASE {0.000} \
+  CONFIG.dpu3_2x_clk_ce.FREQ_HZ {100000000} \
+  CONFIG.dpu3_2x_clk_ce.PHASE {0} \
+  CONFIG.dpu3_2x_clk_ce.POLARITY {ACTIVE_HIGH} \
+  CONFIG.dpu_2x_clk.ASSOCIATED_BUSIF {} \
+  CONFIG.dpu_2x_clk.ASSOCIATED_CLKEN {dpu_2x_clk_ce} \
+  CONFIG.dpu_2x_clk.ASSOCIATED_RESET {dpu_2x_resetn} \
+  CONFIG.dpu_2x_clk.CLK_DOMAIN {/hier_dpu_clk/dpu_clk_wiz_clk_out1} \
+  CONFIG.dpu_2x_clk.FREQ_HZ {180000000} \
+  CONFIG.dpu_2x_clk.INSERT_VIP {0} \
+  CONFIG.dpu_2x_clk.PHASE {0.0} \
+  CONFIG.dpu_2x_clk_ce.FREQ_HZ {100000000} \
+  CONFIG.dpu_2x_clk_ce.PHASE {0} \
+  CONFIG.dpu_2x_clk_ce.POLARITY {ACTIVE_HIGH} \
+  CONFIG.dpu_2x_resetn.INSERT_VIP {0} \
+  CONFIG.dpu_2x_resetn.POLARITY {ACTIVE_LOW} \
+  CONFIG.dpu_interrupt.PortWidth {1} \
+  CONFIG.dpu_interrupt.SENSITIVITY {LEVEL_HIGH} \
+  CONFIG.m_axi_dpu_aclk.ASSOCIATED_BUSIF {DPU0_M_AXI_DATA0:DPU0_M_AXI_DATA1:DPU0_M_AXI_DATA2:DPU0_M_AXI_DATA3:DPU0_M_AXI_INSTR:DPU1_M_AXI_DATA0:DPU1_M_AXI_DATA1:DPU1_M_AXI_DATA2:DPU1_M_AXI_DATA3:DPU1_M_AXI_INSTR:DPU2_M_AXI_DATA0:DPU2_M_AXI_DATA1:DPU2_M_AXI_DATA2:DPU2_M_AXI_DATA3:DPU2_M_AXI_INSTR:DPU3_M_AXI_DATA0:DPU3_M_AXI_DATA1:DPU3_M_AXI_DATA2:DPU3_M_AXI_DATA3:DPU3_M_AXI_INSTR:SFM_M_AXI} \
+  CONFIG.m_axi_dpu_aclk.ASSOCIATED_RESET {m_axi_dpu_aresetn} \
+  CONFIG.m_axi_dpu_aclk.CLK_DOMAIN {/hier_dpu_clk/dpu_clk_wiz_clk_out1} \
+  CONFIG.m_axi_dpu_aclk.FREQ_HZ {90000000} \
+  CONFIG.m_axi_dpu_aclk.INSERT_VIP {0} \
+  CONFIG.m_axi_dpu_aclk.PHASE {0.0} \
+  CONFIG.m_axi_dpu_aresetn.INSERT_VIP {0} \
+  CONFIG.m_axi_dpu_aresetn.POLARITY {ACTIVE_LOW} \
+  CONFIG.s_axi_aclk.ASSOCIATED_BUSIF {S_AXI} \
+  CONFIG.s_axi_aclk.ASSOCIATED_RESET {s_axi_aresetn} \
+  CONFIG.s_axi_aclk.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK0} \
+  CONFIG.s_axi_aclk.FREQ_HZ {100000000} \
+  CONFIG.s_axi_aclk.INSERT_VIP {0} \
+  CONFIG.s_axi_aclk.PHASE {0.000} \
+  CONFIG.s_axi_aresetn.INSERT_VIP {0} \
+  CONFIG.s_axi_aresetn.POLARITY {ACTIVE_LOW} \
+  CONFIG.sfm_interrupt.PortWidth {1} \
+  CONFIG.sfm_interrupt.SENSITIVITY {LEVEL_HIGH} " [get_ips design_1_dpu_eu_0_4]
+
+
+
+
+
+
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Mon Jun 22 08:48:29 2020
+| Host         : salmag98-Lenovo-G50-70 running 64-bit Ubuntu 18.04.3 LTS
+| Command      : upgrade_ip
+| Device       : xc7z020clg484-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_dpu_eu_0_3'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_dpu_eu_0_3 (xilinx.com:ip:dpu_eu:2.0) to Vivado generation flows.
+

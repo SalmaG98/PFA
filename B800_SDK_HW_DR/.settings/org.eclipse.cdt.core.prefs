@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/xilinx.gnu.armv7.linux.exe.debug.1773430738/SYSROOT/delimiter=\:
+environment/project/xilinx.gnu.armv7.linux.exe.debug.1773430738/SYSROOT/operation=append
+environment/project/xilinx.gnu.armv7.linux.exe.debug.1773430738/SYSROOT/value=/home/salmag98/Vivado_Projects/B800_Petalinux_HW_DR/images/linux/sdk/sysroots/cortexa9t2hf-neon-xilinx-linux-gnueabi
+environment/project/xilinx.gnu.armv7.linux.exe.debug.1773430738/append=true
+environment/project/xilinx.gnu.armv7.linux.exe.debug.1773430738/appendContributed=true
