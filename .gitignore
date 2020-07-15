@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 B1152_Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.cache/
 B1152_Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.hw/
 B1152_Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.ip_user_files/
@@ -29,3 +30,20 @@ B800_DNNDK_HW_DR/resnet3.h5
 B800_DNNDK_HW_DR/calibration.txt
 B800_DNNDK_HW_DR/calibration/
 B800_Petalinux_HW_DR_AP_AP/B800_Petalinux_HW_DR/
+=======
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.cache/
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.hw/
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.ip_user_files/
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.runs/
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.sim/
+Diabetic_Rethinopathy_HW_description/design_1_wrapper.xsa
+Diabetic_Rethinopathy_HW_description/Diabetic_Rethinopathy_HW_description.xpr
+DNNDK_HW_DR/dnnc_output/
+DNNDK_HW_DR/__pycache__/
+DNNDK_HW_DR/quantize_results/
+DNNDK_HW_DR/classification_input_fn.py
+DNNDK_HW_DR/frozen_graph.pb
+DNNDK_HW_DR/resnet3.h5
+Petalinux_HW_DR_AP_AP/Petalinux_HW_DR/
+xilinx_dnndk_v3.1_190809/
+>>>>>>> cf8e587949430e4cb3e7b47246e8793f16824552
